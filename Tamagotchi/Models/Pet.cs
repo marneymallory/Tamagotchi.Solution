@@ -64,6 +64,16 @@ namespace Tamagotchi.Models
         _petList[i].Rest -= 10;
       }
     }
+
+    public static List<Pet> GetAllPets()
+    {
+      return _petList;
+    }
+
+    public static void ClearAll()
+    {
+      _petList.Clear();
+    }
   }
 }
 
