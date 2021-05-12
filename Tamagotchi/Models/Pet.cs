@@ -27,7 +27,12 @@ namespace Tamagotchi.Models
 
     public int GiveAttention()
     {
-      return Attention += 10;
+      Attention += 10;
+      if (Attention >= 100)
+      {
+        Attention = 100;
+      }
+      return Attention;
     }
     
     public int GetRest()
