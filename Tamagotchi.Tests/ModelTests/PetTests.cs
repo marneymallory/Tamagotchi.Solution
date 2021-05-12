@@ -80,7 +80,7 @@ namespace Tamagotchi.Tests
     _petObject.Attention = 90;
     _petObject.Rest = 90;
 
-      _petObject.TimePassed();
+      Pet.TimePassed();
       int food = _petObject.Food;
       int attention = _petObject.Attention;
       int rest = _petObject.Rest;

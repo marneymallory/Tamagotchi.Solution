@@ -1,4 +1,7 @@
+using System.Collections.Generic;
+
 namespace Tamagotchi.Models
+
 {
   public class Pet
   {
@@ -7,12 +10,15 @@ namespace Tamagotchi.Models
     public int Attention {get; set;}
     public int Rest { get; set; }
 
+    private static List<Pet> _petList = new List<Pet> { };
+
     public Pet(string name)
     {
       Name = name;
       Food = 100;
       Attention = 100;
       Rest = 100;
+      _petList.Add(this);
     }
 
     public int FeedPet() 
@@ -49,12 +55,20 @@ namespace Tamagotchi.Models
       return "Alive Pet";
     }
     
-    public void TimePassed()
+    public static void TimePassed()
     {
-      Food -= 10;
-      Attention -= 10;
-      Rest -= 10;
+      for (int i=0; i < _petList.Count; i++)
+      {
+        _petList[i].Food -= 10;
+        _petList[i].Attention -= 10;
+        _petList[i].Rest -= 10;
+      }
     }
   }
 }
-// Make time pass. Every time you press it, the food, happiness and sleep properties of all Tamagotchis should decrease.
+
+// public Item(string description)
+//     {
+//       Description = description;
+//       _instances.Add(this);
+//       Id = _instances.Count; //We don't add a set method, because this property will be set in the constructor automatically.
