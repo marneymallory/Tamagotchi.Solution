@@ -26,19 +26,16 @@ namespace Tamagotchi.Tests
     //Assert
     Assert.AreEqual(100, _petObject.Food);
     }
+
+    [TestMethod]
+    public void GiveAttention_AttentionToPet_IncreaseAttentionBy10()
+    {
+    _petObject.Attention = 90;
+    _petObject.GiveAttention();
+    Assert.AreEqual(100, _petObject.Attention);
+    }
+
   }
 }
-
-    // [TestMethod]
-    // public void GetTask_ReturnsTask_String()
-    // {
-    //   //Arrange
-    //   string description = "Walk the dog.";
-
-    //   //Act
-    //   Item newItem = new Item(description);
-    //   string result = newItem.Task;
-
-    //   //Assert
-    //   Assert.AreEqual(description, result);
-    // }
+    // Food, attention and rest
+    // 
