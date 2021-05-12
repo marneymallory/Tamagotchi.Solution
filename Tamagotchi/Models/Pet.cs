@@ -48,5 +48,13 @@ namespace Tamagotchi.Models
       }
       return "Alive Pet";
     }
+    
+    public void TimePassed()
+    {
+      Food -= 10;
+      Attention -= 10;
+      Rest -= 10;
+    }
   }
 }
+// Make time pass. Every time you press it, the food, happiness and sleep properties of all Tamagotchis should decrease.
