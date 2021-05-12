@@ -28,6 +28,17 @@ namespace Tamagotchi.Tests
     }
 
     [TestMethod]
+    public void FeedPet_FeedInstanceOfPetAtMaxFood_FoodAt100()
+    {
+      //Arrange
+      _petObject.Food = 100;
+      //Act
+      _petObject.FeedPet();
+      //Assert
+      Assert.AreEqual(100, _petObject.Food);
+    }
+
+    [TestMethod]
     public void GiveAttention_AttentionToPet_IncreaseAttentionBy10()
     {
     _petObject.Attention = 90;
