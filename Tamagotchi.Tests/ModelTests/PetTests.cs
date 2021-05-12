@@ -38,7 +38,7 @@ namespace Tamagotchi.Tests
     [TestMethod]
     public void GiveRest_RestToPet_IncreaseRestTo100()
     {
-    _petObject.Rest = 90;
+    _petObject.Rest = 50;
     _petObject.GetRest();
     Assert.AreEqual(100, _petObject.Rest);
     }
