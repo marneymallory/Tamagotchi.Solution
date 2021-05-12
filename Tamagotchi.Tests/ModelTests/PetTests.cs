@@ -61,6 +61,7 @@ namespace Tamagotchi.Tests
     _petObject.GetRest();
     Assert.AreEqual(100, _petObject.Rest);
     }
+
     [TestMethod]
     public void IsDead_DeathToPet_DeadPet()
     {
@@ -70,6 +71,24 @@ namespace Tamagotchi.Tests
 
     string result = _petObject.IsDead(); 
     Assert.AreEqual("Dead Pet", result);
+    }
+
+    [TestMethod]
+    public void TimePassed_TimePassed_DecrementPropertiesByTen()
+    {
+    _petObject.Food = 90;
+    _petObject.Attention = 90;
+    _petObject.Rest = 90;
+
+      _petObject.TimePassed();
+      int food = _petObject.Food;
+      int attention = _petObject.Attention;
+      int rest = _petObject.Rest;
+
+      int[] result = { food, attention, rest };
+      int[] compare = { 80, 80, 80 };
+
+      CollectionAssert.AreEqual(compare, result);
     }
 
   }
