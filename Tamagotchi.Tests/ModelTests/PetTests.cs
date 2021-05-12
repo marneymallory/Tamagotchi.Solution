@@ -61,6 +61,16 @@ namespace Tamagotchi.Tests
     _petObject.GetRest();
     Assert.AreEqual(100, _petObject.Rest);
     }
+    [TestMethod]
+    public void IsDead_DeathToPet_DeadPet()
+    {
+    _petObject.Food = 0;
+    _petObject.Attention = 0;
+    _petObject.Rest = 0;
+
+    string result = _petObject.IsDead(); 
+    Assert.AreEqual("Dead Pet", result);
+    }
 
   }
 }
