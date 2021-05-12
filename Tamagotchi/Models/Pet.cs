@@ -17,12 +17,19 @@ namespace Tamagotchi.Models
 
     public int FeedPet() 
     {
-      return Food += 10;
+      Food += 10;
+      if (Food >= 100)
+      {
+        Food = 100;
+      }
+      return Food;
     }
+
     public int GiveAttention()
     {
       return Attention += 10;
     }
+    
     public int GetRest()
     {
       Rest = 100;
