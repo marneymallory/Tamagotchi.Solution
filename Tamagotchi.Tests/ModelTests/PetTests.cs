@@ -47,6 +47,14 @@ namespace Tamagotchi.Tests
     }
 
     [TestMethod]
+    public void GiveAttention_GiveAttentionToPetAtMaxCapacity_AttentionAt100()
+    {
+    _petObject.Attention = 100;
+    _petObject.GiveAttention();
+    Assert.AreEqual(100, _petObject.Attention);
+    }
+
+    [TestMethod]
     public void GiveRest_RestToPet_IncreaseRestTo100()
     {
     _petObject.Rest = 50;
