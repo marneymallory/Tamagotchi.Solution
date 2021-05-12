@@ -1,0 +1,15 @@
+@using Tamagotchi.Models;
+
+<h1>Tamagotchi</h1>
+<ul>
+  @foreach (Pet pet in Model)
+  {
+    <li>@pet.Name</li>
+    <li>@pet.Food</li>
+    <li>@pet.Attention</li>
+    <li>@pet.Rest</li>
+
+    <p>@pet.IsDead()</p>
+    }
+
+</ul>
