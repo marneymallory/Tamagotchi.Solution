@@ -40,5 +40,13 @@ namespace Tamagotchi.Models
       Rest = 100;
       return  Rest;
     }
+    public string IsDead()  //what properties are IsDead looking at? (Food, Rest, Attention)
+    {
+      if (Food <= 0 || Rest <= 0 || Attention <= 0)
+      {
+      return "Dead Pet";
+      }
+      return "Alive Pet";
+    }
   }
 }
